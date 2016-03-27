@@ -10,7 +10,6 @@ Vote Counting
 # Authors
 
 * Jose Labra
-
-
-
-
+* Oscar Rubio Garcia
+* Sergio Ivan Franco
+* Jose Chamadoira
