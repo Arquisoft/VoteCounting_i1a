@@ -28,7 +28,7 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
 	{
 		List<String> PPList = new ArrayList<String>();
 		
-		String sql = "SELECT POLITICAL_PARTY FROM VOTES";
+		String sql = "SELECT POLITICAL_PARTY FROM VOTES;";
 		
 		try {
             PreparedStatement statement = conn.prepareStatement(sql);
@@ -43,15 +43,20 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
 
             return PPList;
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            System.out.Println("Database Offline");
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.Println("Database Offline");
+            }
         }
 	}
 	
 	@Override
 	public int countTotal(String party)
 	{
-		String sql = "SELECT COUNT(*) FROM VOTES WHERE POLITICAL_PARTY = ?";
+		String sql = "SELECT COUNT(*) FROM VOTES WHERE POLITICAL_PARTY = ?;";
         
 		int count = 0;
 		
@@ -70,8 +75,13 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
 
             return count;
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            System.out.Println("Database Offline");
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.Println("Database Offline");
+            }
         }
 	}
 }

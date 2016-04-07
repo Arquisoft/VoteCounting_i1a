@@ -26,11 +26,13 @@ public class Counter {
 	  // Lists all political parties and then performs a preparedStatement in order to 
 	  // 	extract and store the sum of all the results for the specific political party
 	  //	SQL stuff done in DBVotesDAO
+
+
   }
   
   public void updateResults()
   {
-	  // Updates the Database_Results with the sum of the votes found.
+	  // Updates or inserts in the Database_Results the sum of the votes found.
 	  //	SQL stuff done in DBResultsDAO
   }
 }

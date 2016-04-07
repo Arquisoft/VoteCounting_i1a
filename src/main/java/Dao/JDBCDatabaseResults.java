@@ -24,8 +24,58 @@ public class JDBCDatabaseResults implements DBResultsDAO{
 	}
 	
 	@Override
-	public void updateResults()
+	public void updateResults(String PoliticalParty, int totalVotes)
 	{
-		  
+        String sql = "UPDATE RESULTS SET TOTAL_VOTES = ? WHERE POLITICAL_PARTY = ?;";
+
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setInt(1, totalVotes);
+            statement.setString(2, PoliticalParty);
+
+            //ResultSet resultSet = statement.executeQuery();
+
+            statement.executeUpdate();
+
+            statement.close();
+
+            return PPList;
+        } catch (SQLException e) {
+           System.out.Println("Database Offline");
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.Println("Database Offline");
+            }
+        }
 	}
+
+    @Override
+    public void addResults(String PoliticalParty, int totalVotes)
+    {
+        String sql = "INSERT INTO RESULTS " +
+                "(POLITICAL_PARTY, TOTAL_VOTES ) " +
+                "VALUES ( ?,? )";
+
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, PoliticalParty);
+            statement.setInt(2, totalVotes);
+
+            statement.executeUpdate();
+
+            statement.close();
+
+            return PPList;
+        } catch (SQLException e) {
+            System.out.Println("Database Offline");
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.Println("Database Offline");
+            }
+        }
+    }
 }
