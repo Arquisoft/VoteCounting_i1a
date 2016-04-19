@@ -26,6 +26,8 @@ public class Counter {
 	  // Pretty much uses readVotes and updateResults.
     readVotes();
     System.out.println("Counting succesfull.");
+      System.out.println("Please load in next database then press a key to continue");
+      Console.ReadKey();
     updateResults();
     System.out.println("Succesfully added Votes.");
   }
