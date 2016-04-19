@@ -8,7 +8,13 @@ public class Counter {
 	
 	private List<String> PPList; // Political Party list
 	private List<int> countList; // Sum of votes
-	
+
+
+  public void Main()
+  {
+    Count();
+
+  }
 	
   public Counter()
   {
@@ -18,6 +24,10 @@ public class Counter {
   public void Count()
   {
 	  // Pretty much uses readVotes and updateResults.
+    readVotes();
+    System.out.println("Counting succesfull.");
+    updateResults();
+    System.out.println("Succesfully added Votes.");
   }
 
   public void readVotes()
@@ -26,7 +36,15 @@ public class Counter {
 	  // Lists all political parties and then performs a preparedStatement in order to 
 	  // 	extract and store the sum of all the results for the specific political party
 	  //	SQL stuff done in DBVotesDAO
+      DBVotesDAO dao = new JDBCDatabaseVotes();
 
+      PPList = dao.getParties();
+      countList = new ArrayList<Integer>();
+
+      for(int i = 0; i < PPList.size(); i++)
+      {
+        countList.add(dao.countTotal(PPList.get(i)));
+      }
 
   }
   
@@ -34,5 +52,13 @@ public class Counter {
   {
 	  // Updates or inserts in the Database_Results the sum of the votes found.
 	  //	SQL stuff done in DBResultsDAO
+
+      DBResultsDAO dao = new JDBCDatabaseResults();
+
+      for(int i = 0; i < PPList.size(); i++)
+      {
+          //dao.addResults(PPList.get(i), countList.get(i));
+          dao.updateResults(PPList.get(i), countList.get(i));
+      }
   }
 }
