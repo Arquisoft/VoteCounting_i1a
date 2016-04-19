@@ -35,9 +35,9 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
 
             ResultSet resultSet = statement.executeQuery();
 
-            if (!resultSet.next())
-				PPList.add(resultSet.getString("POLITICAL_PARTY"));
-                return null;
+            while(resultSet.next()) {
+                PPList.add(resultSet.getString("POLITICAL_PARTY"));
+            }
 			
             resultSet.close();
 
@@ -67,7 +67,7 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
             ResultSet resultSet = statement.executeQuery();
 
             if (!resultSet.next())
-                return null;
+                return 0;
 
             count = Integer.parseInt(resultSet.getString(1));
 			
