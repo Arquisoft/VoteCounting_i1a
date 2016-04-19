@@ -32,8 +32,9 @@ public class Main {
     }
 
     @RequestMapping("/count")
-    public void updateCount() {
-      new VoteCounter(voteRepository, voteCountRepository).count();
+    public ModelAndView updateCount() {
+        new VoteCounter(voteRepository, voteCountRepository).count();
+        return new ModelAndView("count");
     }
 
     @RequestMapping("/votes")

@@ -4,9 +4,21 @@
 <body>
 <div th:replace="fragments/header :: cabecera">
     <p>Hello!</p>
-    <form method="post" action="/count">
-        <input type="submit" value="Count votes"/>
-    </form>
 </div>
+
+<section>
+    <h2>Admin</h2>
+    <ul>
+        <li><a href="/seed">Seed database</a></li>
+        <li><a href="/count">Count votes</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Public</h2>
+    <ul>
+        <li><a href="/votes">View results</a></li>
+    </ul>
+</section>
 </body>
 </html>
