@@ -2,6 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: head"></head>
 <body>
-<div th:replace="fragments/header :: cabecera"><p>Hello!</p></div>
+<div th:replace="fragments/header :: cabecera">
+    <p>Hello!</p>
+    <form method="post" action="/count">
+        <input type="submit" value="Count votes"/>
+    </form>
+</div>
 </body>
 </html>
