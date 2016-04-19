@@ -37,11 +37,9 @@ public class Main {
         return new ModelAndView("count");
     }
 
-    @RequestMapping("/votes")
-    public ModelAndView votes(Model model) {
-        Iterable<VoteCount> results = new Results(voteCountRepository).results();
-        model.addAttribute("results", results);
-        return new ModelAndView("votes");
+    @RequestMapping("/results")
+    public ModelAndView results() {
+        return new ModelAndView("results");
     }
 
     @RequestMapping("/seed")
