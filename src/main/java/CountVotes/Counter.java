@@ -2,7 +2,7 @@ package CountVotes;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.io.PrintStream;
+import java.lang.System;
 
 import Dao.*;
 
