@@ -2,6 +2,7 @@ package Dao;
 
 import java.sql.*;
 import java.util.List;
+import java.io.PrintStream;
 
 public class JDBCDatabaseVotes implements DBVotesDAO{
 	

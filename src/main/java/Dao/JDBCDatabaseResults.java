@@ -2,6 +2,7 @@ package Dao;
 
 import java.sql.*;
 import java.util.List;
+import java.io.PrintStream;
 
 public class JDBCDatabaseResults implements DBResultsDAO{
 	
@@ -39,7 +40,6 @@ public class JDBCDatabaseResults implements DBResultsDAO{
 
             statement.close();
 
-            return PPList;
         } catch (SQLException e) {
            System.out.Println("Database Offline");
         } finally {
@@ -67,7 +67,6 @@ public class JDBCDatabaseResults implements DBResultsDAO{
 
             statement.close();
 
-            return PPList;
         } catch (SQLException e) {
             System.out.Println("Database Offline");
         } finally {

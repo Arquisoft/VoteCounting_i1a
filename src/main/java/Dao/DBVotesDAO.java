@@ -1,5 +1,6 @@
 package Dao;
 
+import java.util.List;
 
 public interface DBVotesDAO {
 	
