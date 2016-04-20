@@ -52,6 +52,7 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
                 //System.out.Println("Database Offline");
             }
         }
+        return PPList;
 	}
 	
 	@Override
@@ -84,5 +85,6 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
                 //System.out.Println("Database Offline");
             }
         }
+        return 0;
 	}
 }
