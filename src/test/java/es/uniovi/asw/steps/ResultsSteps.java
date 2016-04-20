@@ -36,7 +36,7 @@ public class ResultsSteps {
   protected MvcResult result;
   
   @When("^the client calls /results$")
-  public void the_client_calls() throws Throwable {
+  public void the_client_calls_results() throws Throwable {
     Assert.notNull(context);
     this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
     result = mvc.perform(get("/results")).andReturn();
