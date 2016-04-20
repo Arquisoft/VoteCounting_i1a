@@ -1,10 +1,10 @@
-package CountVotes;
+package countVotes;
 
 import java.util.List;
 import java.util.ArrayList;
 
 
-import Dao.*;
+import dao.*;
 
 public class Counter {
 	
@@ -12,18 +12,14 @@ public class Counter {
 	private List<Integer> countList; // Sum of votes
 
 
-  public void Main()
+  public void main()
   {
-    Count();
+    count();
 
   }
-	
-  public Counter()
-  {
-	  
-  }
+
   
-  public void Count()
+  public void count()
   {
 	  // Pretty much uses readVotes and updateResults.
     readVotes();

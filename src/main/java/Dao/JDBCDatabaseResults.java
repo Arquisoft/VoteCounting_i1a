@@ -1,7 +1,6 @@
-package Dao;
+package dao;
 
 import java.sql.*;
-import java.util.List;
 
 
 public class JDBCDatabaseResults implements DBResultsDAO{
