@@ -35,25 +35,11 @@ public class ResultsSteps {
   protected MockMvc mvc;
   protected MvcResult result;
   
-  @Value("${local.server.port}")
-  protected int port;
-
-  
   @When("^the client calls /results/$")
   public void the_client_calls() throws Throwable {
     Assert.notNull(context);
     this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
     result = mvc.perform(get("/results/")).andReturn();
-  }
-
-  @Then("^the client receives status code of (\\d+)$")
-  public void the_client_receives_status_code_of(int status) throws Throwable {
-    assertThat(result.getResponse().getStatus(), is(status));
-  }
-
-  @Then("^the client receives the string \"([^\"]*)\"$")
-  public void the_client_receives_the_string(String str) throws Throwable {
-   assertThat(result.getResponse().getContentAsString(), containsString(str));
   }
 
 }
