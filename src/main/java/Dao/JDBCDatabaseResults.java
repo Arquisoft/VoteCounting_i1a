@@ -41,7 +41,7 @@ public class JDBCDatabaseResults implements DBResultsDAO{
             statement.close();
 
         } catch (SQLException e) {
-           System.out.Println("Database Offline");
+           //System.out.Println("Database Offline");
         } finally {
             try {
                 conn.close();

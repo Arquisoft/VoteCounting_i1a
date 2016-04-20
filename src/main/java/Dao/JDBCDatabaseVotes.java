@@ -2,7 +2,7 @@ package Dao;
 
 import java.sql.*;
 import java.util.List;
-
+import java.util.ArrayList;
 
 public class JDBCDatabaseVotes implements DBVotesDAO{
 	
@@ -44,7 +44,7 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
 
             return PPList;
         } catch (SQLException e) {
-            System.out.Println("Database Offline");
+            //System.out.Println("Database Offline");
         } finally {
             try {
                 conn.close();
