@@ -2,7 +2,7 @@ package Dao;
 
 import java.sql.*;
 import java.util.List;
-import java.lang.System;
+
 
 public class JDBCDatabaseVotes implements DBVotesDAO{
 	
@@ -49,7 +49,7 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
             try {
                 conn.close();
             } catch (SQLException e) {
-                System.out.Println("Database Offline");
+                //System.out.Println("Database Offline");
             }
         }
 	}
@@ -76,12 +76,12 @@ public class JDBCDatabaseVotes implements DBVotesDAO{
 
             return count;
         } catch (SQLException e) {
-            System.out.Println("Database Offline");
+            //System.out.Println("Database Offline");
         } finally {
             try {
                 conn.close();
             } catch (SQLException e) {
-                System.out.Println("Database Offline");
+                //System.out.Println("Database Offline");
             }
         }
 	}

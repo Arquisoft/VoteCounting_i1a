@@ -2,7 +2,7 @@ package CountVotes;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.lang.System;
+
 
 import Dao.*;
 
@@ -27,11 +27,11 @@ public class Counter {
   {
 	  // Pretty much uses readVotes and updateResults.
     readVotes();
-    System.out.println("Counting succesfull.");
-      System.out.println("Please load in next database then press a key to continue");
-      System.in.read();
+    //System.out.println("Counting succesfull.");
+      //System.out.println("Please load in next database then press a key to continue");
+      //System.in.read();
     updateResults();
-    System.out.println("Succesfully added Votes.");
+    //System.out.println("Succesfully added Votes.");
   }
 
   public void readVotes()
