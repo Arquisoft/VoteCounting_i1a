@@ -1,4 +1,4 @@
-package countVotes;
+package countvotes;
 
 import java.util.List;
 import java.util.ArrayList;
