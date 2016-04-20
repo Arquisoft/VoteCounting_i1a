@@ -7,7 +7,7 @@ import Dao.*;
 public class Counter {
 	
 	private List<String> PPList; // Political Party list
-	private List<int> countList; // Sum of votes
+	private List<Integer> countList; // Sum of votes
 
 
   public void Main()
@@ -27,7 +27,7 @@ public class Counter {
     readVotes();
     System.out.println("Counting succesfull.");
       System.out.println("Please load in next database then press a key to continue");
-      System.in.read()
+      System.in.read();
     updateResults();
     System.out.println("Succesfully added Votes.");
   }
