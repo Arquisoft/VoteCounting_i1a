@@ -35,11 +35,11 @@ public class ResultsSteps {
   protected MockMvc mvc;
   protected MvcResult result;
   
-  @When("^the client calls /results/$")
+  @When("^the client calls /results$")
   public void the_client_calls() throws Throwable {
     Assert.notNull(context);
     this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
-    result = mvc.perform(get("/results/")).andReturn();
+    result = mvc.perform(get("/results")).andReturn();
   }
 
 }
