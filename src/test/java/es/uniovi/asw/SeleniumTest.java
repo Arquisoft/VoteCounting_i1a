@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Selenium {
+public class SeleniumTest {
     private char[] charNumber= {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     WebDriver driver;
 
